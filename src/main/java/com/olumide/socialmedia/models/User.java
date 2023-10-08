@@ -17,7 +17,10 @@ import java.util.Set;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
+        @Column(unique = true)
         private String username;
+
+        @Column(unique = true)
         private String email;
         private String profilePicture;
 
@@ -39,5 +42,8 @@ import java.util.Set;
 
     @OneToMany(mappedBy = "following", cascade = CascadeType.ALL)
     private List<UserRelationship> followingRelationships;
+
+
+    private String password;
 
 }

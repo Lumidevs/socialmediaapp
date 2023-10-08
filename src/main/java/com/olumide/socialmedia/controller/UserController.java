@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,10 +18,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = userService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
+    }
+    @PostMapping("/login")
+    public ResponseEntity<User> loginUser(@RequestBody User user, HttpServletResponse httpServletResponse) {
+        User createdUser = userService.loginuser(user, httpServletResponse);
+        return ResponseEntity.status(HttpStatus.OK).body(createdUser);
     }
 
     @GetMapping

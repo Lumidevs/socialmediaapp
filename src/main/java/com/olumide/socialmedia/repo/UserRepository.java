@@ -2,6 +2,8 @@ package com.olumide.socialmedia.repo;
 
 import com.olumide.socialmedia.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,6 +23,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Delete a user by ID
     void deleteById(Long userId);
 
-    User findUserByUsernameEqualsIgnoreCase(String Username);
+    Optional<User> findUserByUsernameEqualsIgnoreCase(String Username);
+    @Query("SELECT u FROM User u WHERE u.username = :username")
+    Optional<User> findByUsername(@Param("username") String username);
 
 }
