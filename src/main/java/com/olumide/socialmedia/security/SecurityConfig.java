@@ -39,8 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         })
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/users/login").permitAll()
-                .antMatchers("/api/users/create").permitAll()
+                .antMatchers("/api/users/login", "/api/users/create").permitAll()
                 .anyRequest().authenticated().and()
                 .addFilter(new JwtRequestFilter(authenticationManager()))
                 // this disables session creation on Spring Security
