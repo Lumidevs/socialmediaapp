@@ -1,7 +1,10 @@
 # socialmediaapp
 Used for managing user's social media account
 
-pull olumide_dev branch and run locally.
+pull olumide_dev branch and run locally on intelliJ.
+
+the database used in mySQL
+
 
 The user creates an account using the payload
 {
