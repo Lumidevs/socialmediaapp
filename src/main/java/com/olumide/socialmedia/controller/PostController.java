@@ -50,4 +50,10 @@ public class PostController {
         Post updated = postService.updatePost(postId, updatedPost);
         return ResponseEntity.ok(updated);
     }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Post>> getPostsForUser(@PathVariable Long userId) {
+        List<Post> posts = postService.getPostsForUser(userId);
+        return ResponseEntity.ok(posts);
+    }
 }

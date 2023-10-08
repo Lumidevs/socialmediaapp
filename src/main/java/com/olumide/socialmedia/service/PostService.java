@@ -6,6 +6,7 @@ import com.olumide.socialmedia.repo.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +16,7 @@ public class PostService {
     private PostRepository postRepository;
 
     public Post createPost(Post post) {
+        post.setCreationDate(LocalDateTime.now());
         return postRepository.save(post);
     }
 

@@ -49,6 +49,15 @@ public class CommentController {
     public ResponseEntity<Comment> updateComment(@PathVariable Long commentId, @RequestBody Comment updatedComment) {
         Comment updated = commentService.updateComment(commentId, updatedComment);
         return ResponseEntity.ok(updated);
+
+
+    } @GetMapping("/post/{postId}")
+    public ResponseEntity<List<Comment>> getCommentsForPost(@PathVariable Long postId) {
+        List<Comment> comments = commentService.getCommentsForPost(postId);
+        return ResponseEntity.ok(comments);
     }
+
+
+
 }
 

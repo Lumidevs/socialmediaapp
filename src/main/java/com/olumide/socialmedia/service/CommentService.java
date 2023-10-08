@@ -43,5 +43,10 @@ public class CommentService {
             throw new GeneralExceptions.CommentNotFoundException("Comment not found with ID: " + commentId);
         }
     }
+
+
+    public List<Comment> getCommentsForPost(Long postId) {
+        return commentRepository.findByPostId(postId);
+    }
 }
 

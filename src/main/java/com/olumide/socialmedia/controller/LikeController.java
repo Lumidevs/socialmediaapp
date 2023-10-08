@@ -50,5 +50,12 @@ public class LikeController {
         Like updated = likeService.updateLike(likeId, updatedLike);
         return ResponseEntity.ok(updated);
     }
+
+
+    @GetMapping("/post/{postId}")
+    public ResponseEntity<List<Like>> getLikesForPost(@PathVariable Long postId) {
+        List<Like> likes = likeService.getLikesForPost(postId);
+        return ResponseEntity.ok(likes);
+    }
 }
 

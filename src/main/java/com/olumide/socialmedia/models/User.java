@@ -11,6 +11,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Table(name="users")
     public class User {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,5 +34,10 @@ import java.util.Set;
 
         @ManyToMany(mappedBy = "following")
         private Set<User> followers = new HashSet<>();
+
+
+
+    @OneToMany(mappedBy = "following", cascade = CascadeType.ALL)
+    private List<UserRelationship> followingRelationships;
 
 }

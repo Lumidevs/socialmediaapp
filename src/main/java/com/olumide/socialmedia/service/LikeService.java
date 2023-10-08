@@ -45,5 +45,9 @@ public class LikeService {
             throw new GeneralExceptions.LikeNotFoundException("Like not found with ID: " + likeId);
         }
     }
+
+    public List<Like> getLikesForPost(Long postId) {
+        return likeRepository.findByPostId(postId);
+    }
 }
 

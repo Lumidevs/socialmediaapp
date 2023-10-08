@@ -25,5 +25,4 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<>(); // Comments on the post
 
-    // Getters and setters
 }

@@ -15,5 +15,8 @@ public interface LikeRepository extends JpaRepository<Like, Long> {
     Optional<Like> findById(Long likeId);
 
     void deleteById(Long likeId);
+
+    List<Like> findByPostId(Long postId);
+
 }
 

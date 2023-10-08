@@ -21,4 +21,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Delete a user by ID
     void deleteById(Long userId);
 
+    User findUserByUsernameEqualsIgnoreCase(String Username);
+
 }
