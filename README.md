@@ -18,7 +18,7 @@ after creating the account, the user can login using the payload
 http://localhost:8080/api/users/login
 
 
-after login in, the user can make a post
+after login in,s ia Json web token is generated and added to the response header which can be used for subsequent calls into the servicee. The user can make a post
 {
     "user":{
         "id": 5
