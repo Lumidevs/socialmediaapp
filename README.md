@@ -1,6 +1,8 @@
 # socialmediaapp
 Used for managing user's social media account
 
+pull olumide_dev branch and run locally.
+
 The user creates an account using the payload
 {
     "username": "test",
