@@ -20,7 +20,7 @@ public class Comment {
     @JoinColumn(name = "post_id")
     private Post post;
 
-    private String text;
+    private String comment;
     private LocalDateTime creationDate;
 }
 
