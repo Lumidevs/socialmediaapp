@@ -39,7 +39,6 @@ public class LikeService {
             // For example, you can update the user or post associated with the like
             existingLike.setUser(updatedLike.getUser());
             existingLike.setPost(updatedLike.getPost());
-            // Update other properties as needed
             return likeRepository.save(existingLike);
         } else {
             throw new GeneralExceptions.LikeNotFoundException("Like not found with ID: " + likeId);

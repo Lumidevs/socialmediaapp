@@ -37,7 +37,6 @@ public class CommentService {
             Comment existingComment = existingCommentOptional.get();
             // Update comment properties here
             existingComment.setText(updatedComment.getText());
-            // Update other properties as needed
             return commentRepository.save(existingComment);
         } else {
             throw new GeneralExceptions.CommentNotFoundException("Comment not found with ID: " + commentId);

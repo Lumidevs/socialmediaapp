@@ -22,7 +22,5 @@ public class Comment {
 
     private String text;
     private LocalDateTime creationDate;
-
-    // Getters and setters
 }
 

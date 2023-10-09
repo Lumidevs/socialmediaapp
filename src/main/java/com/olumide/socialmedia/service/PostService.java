@@ -39,7 +39,6 @@ public class PostService {
             Post existingPost = existingPostOptional.get();
             // Update post properties here
             existingPost.setContent(updatedPost.getContent());
-            // Update other properties as needed
             return postRepository.save(existingPost);
         } else {
             throw new GeneralExceptions.PostNotFoundException("Post not found with ID: " + postId);
